@@ -18,8 +18,9 @@
         "name": "next"
       }
     ],
+    "baseUrl": "src",  // Set baseUrl to 'src'
     "paths": {
-      "@/*": ["./src/*"]
+      "@components/*": ["src/components/*"]  // Define the alias for components
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

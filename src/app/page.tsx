@@ -1,101 +1,152 @@
-import Image from "next/image";
+import { HorizontalCard } from '../components/cards/HorizontalCard';
+import { VerticalCard } from '../components/cards/VerticalCard';
+import { Footer } from '../components/Footer';
+import { Icon } from '../components/Icon';
+import { Sidebar } from '../components/Sidebar';
+import { SpriteCategories } from '../shared/enums/SpriteCategories';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="h-screen flex flex-col">
+      <div className="flex flex-1">
+        <Sidebar />
+        <main className="flex-1 p-6">
+          <section className="flex items-center gap-4">
+          <button className="rounded-full bg-black/20 p-1 disabled:bg-black/5 disabled:text-zinc-100/20 enabled:hover:bg-black/80 transition-colors ease-in-out duration-300">
+          <Icon
+                category={SpriteCategories.ARROWS}
+                name="chevron-left"
+                size="lg"
+              />
+            </button>
+            <button
+              disabled
+              className="rounded-full bg-black/20 p-1 disabled:bg-black/5 disabled:text-zinc-100/20 enabled:hover:bg-black/80 transition-colors ease-in-out duration-300"
+            >
+              <Icon
+                category={SpriteCategories.ARROWS}
+                name="chevron-right"
+                size="lg"
+              />
+            </button>
+          </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+          <h1 className="font-semibold text-3xl mt-10 text-white">Good Afternoon</h1>
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            <HorizontalCard
+              album="Busco Romance Love Show"
+              artist="SZA"
+              cover="/assets/media/album08.jpg"
+              href="#"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <HorizontalCard
+              album="Taurus, Vol. 2"
+              artist="Artist/Band"
+              cover="/assets/media/album09.jpg"
+              href="#"
+            />
+            <HorizontalCard
+              album="CAJU"
+              artist="Artist/Band"
+              cover="/assets/media/album10.jpg"
+              href="#"
+            />
+          </section>
+
+          <h2 className="font-semibold text-2xl mt-10 text-white">
+            Made for Larissa Souza
+          </h2>
+          <section className="grid md:grid-cols-5 grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
+            <VerticalCard
+              album="Descobertas da Semana"
+              artist="Artist/Band"
+              cover="/assets/media/image-01.jpg"
+              href="#"
+            />
+            <VerticalCard
+              album="FLO, Summer Walker, Beyoncé e mais"
+              artist="Artist/Band"
+              cover="/assets/media/image-05.jpg"
+              href="#"
+            /> 
+            <VerticalCard
+              album="Budah, BK, Luccas Carlos e mais"
+              artist="Artist/Band"
+              cover="/assets/media/image-02.jpg"
+              href="#"
+            /> 
+            <VerticalCard
+              album="Drake, Kanye West, Mac Miller e mais"
+              artist="Artist/Band"
+              cover="/assets/media/image-06.jpg"
+              href="#"
+            />
+            
+             
+            <VerticalCard
+              album="The Weeknd, PARTYNEXTDOOR, 7latenights e mais"
+              artist="Artist/Band"
+              cover="/assets/media/image-03.jpg"
+              href="#"
+            />
+            
+            <VerticalCard
+              album="IZA, Anitta, Gloria Groove e mais"
+              artist="Artist/Band"
+              cover="/assets/media/image-04.jpg"
+              href="#"
+            />
+          
+          </section>
+          <h2 className="font-semibold text-2xl mt-10 text-white">
+                Your songs are missed
+          </h2>
+          <section className="grid md:grid-cols-5 grid-cols-2 lg:grid-cols-6 gap-4 mt-4">
+            <VerticalCard
+              album="Lucas"
+              artist="Anchietx, Os Garotin"
+              cover="/assets/media/album02.jpg"
+              href="#"
+            />
+            <VerticalCard
+              album="AFRODHIT"
+              artist="IZA"
+              cover="/assets/media/album03.jpg"              
+              href="#"
+            /> 
+            <VerticalCard
+              album="Vinho"
+              artist="Delacruz"
+              cover="/assets/media/album04.jpg"
+              href="#"
+            /> 
+            <VerticalCard
+              album="Dois"
+              artist="Luccas Carlos"
+              cover="/assets/media/album05.jpg"
+              href="#"
+            />
+            <VerticalCard
+              album="TROCA ENTRE NÓS "
+              artist="Ju Cizar"
+              cover="/assets/media/album06.jpg"
+              href="#"
+            />
+            <VerticalCard
+              album="Púrpura"
+              artist="Budah"
+              cover="/assets/media/album07.jpg"
+              href="#"
+            />
+          </section>
+        </main>
+      </div>
+
+      <Footer
+        artist="Lady Gaga"
+        cover="/assets/media/album.jpg"
+        music="The Edge Of Glory"
+      />
     </div>
   );
 }
