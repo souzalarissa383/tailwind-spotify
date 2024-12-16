@@ -1,6 +1,5 @@
 # tailwind-spotify
-
-Este projeto é uma reprodução da **Home Page do Spotify Web**, construída com **Next.js** e **Tailwind CSS**. A ideia é criar uma interface visualmente semelhante à página inicial do Spotify, utilizando as tecnologias mencionadas para a construção de um layout responsivo e moderno.
+Este projeto é uma reprodução da Home Page do Spotify Web, construída com Next.js e Tailwind CSS. Foi desenvolvido como parte de um desafio da Rocketseat com o objetivo de criar uma interface visualmente semelhante à página inicial do Spotify, utilizando as tecnologias mencionadas para um layout responsivo e moderno.
 
 ## Funcionalidades
 
